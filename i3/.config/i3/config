@@ -198,14 +198,16 @@ bar {
 bindsym $mod+shift+x exec --no-startup-id /home/lateef/.config/i3/lockscreen.sh
 
 #AT STARTUP
-exec_always feh --bg-scale ~/Pictures/wallpapers/wallhaven-8586my_1920x1080.png
+# exec_always feh --bg-scale ~/Pictures/wallpapers/wallhaven-8586my_1920x1080.png
 exec --no-startup-id i3-msg 'workspace $ws3; exec firefox'
 exec --no-startup-id i3-msg 'workspace $ws2; exec kitty -e nvim'
 exec --no-startup-id i3-msg 'workspace $ws1; exec kitty -e btop;'
 exec --no-startup-id i3-msg 'workspace $ws1; exec kitty -e neofetch;'
+exec --no-startup-id i3-msg 'workspace $ws6; exec spotify'
 #exec --no-startup-id i3-msg 'workspace $ws1; exec kitty -e neofetch;' 
-exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf 
+# exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf 
 exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080
 
 #Settings to start xmodmap in order to rebind Caps Lock to Left Ctrl and rebind fn+CapsLock to CapsLock
-exec --no-startup-id xmodmap ~/.Xmodmap
+# exec --no-startup-id xmodmap ~/.Xmodmap
+exec --no-startup-id xset r rate 200 30
