@@ -51,6 +51,7 @@ return {
 				"pylint", -- python linter
 				"debugpy",
 				"eslint_d", -- js linter
+				"ktlint", -- kotlin linter
 			},
 		})
 	end,
