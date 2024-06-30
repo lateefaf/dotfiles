@@ -38,6 +38,7 @@ return {
 				"sqlls",
 				"yamlls",
 				"marksman",
+				"kotlin_language_server",
 			},
 		})
 

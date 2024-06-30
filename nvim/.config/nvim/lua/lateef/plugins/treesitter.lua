@@ -11,6 +11,19 @@ return {
 
 		-- configure treesitter
 		treesitter.setup({ -- enable syntax highlighting
+			-- install parsers synchronously (only applied to `ensure_installed`)
+			sync_install = false,
+
+			-- automatically install missing parsers when entering buffer
+			-- recommendation: set to false if you don't have `tree-sitter` cli installed locally
+			auto_install = true,
+
+			-- List of parsers to ignore installing (or "all")
+			ignore_install = {},
+
+			modules = {},
+
+			-- Yo
 			highlight = {
 				enable = true,
 			},
