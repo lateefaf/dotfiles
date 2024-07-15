@@ -41,7 +41,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# screen brightness hotkeys
+# screen brightness hotkeyspulse
 bindsym XF86MonBrightnessUp exec xbacklight -inc 15 
 bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 
@@ -90,7 +90,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+- split h
+bindsym $mod+_ split g
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -211,3 +211,8 @@ exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080
 #Settings to start xmodmap in order to rebind Caps Lock to Left Ctrl and rebind fn+CapsLock to CapsLock
 # exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xset r rate 200 30
+#Setting to set the screen turn of after 25 minutes
+exec --no-startup-id xset dpms 1500 1500 1500
+exec --no-startup-id pulseaudio --start
+
+default_border pixel 0
