@@ -1,9 +1,18 @@
 # Created by newuser for 5.9
-eval "$(starship init zsh)"
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!  
 # Initialize Starship prompt
 eval "$(starship init zsh)"
+
+#Downloaded from source
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Downloaded using package manager
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Uses default zsh functions to search zsh history for partial commands
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
 
 # SDKMAN initialization
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
