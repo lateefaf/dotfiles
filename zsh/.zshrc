@@ -2,9 +2,8 @@
 # Initialize Starship prompt
 eval "$(starship init zsh)"
 
-#Downloaded from source
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Downloaded using package manager
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Uses default zsh functions to search zsh history for partial commands
