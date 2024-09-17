@@ -28,7 +28,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --color 000000
+exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/lateef/.config/i3/lockscreen.sh 
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -41,7 +41,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# screen brightness hotkeys
+# screen brightness hotkeyspulse
 bindsym XF86MonBrightnessUp exec xbacklight -inc 15 
 bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 
@@ -90,7 +90,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+- split h
+bindsym $mod+_ split g
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -169,16 +169,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize grow width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize shrink width 5 px or 5 ppt
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Right resize grow width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -195,7 +195,7 @@ bar {
 }
 
 #bindsym $mod+shift+x exec i3lock 
-bindsym $mod+shift+x exec --no-startup-id i3lock --color 000000
+bindsym $mod+shift+x exec --no-startup-id /home/lateef/.config/i3/lockscreen.sh
 
 #AT STARTUP
 # exec_always feh --bg-scale ~/Pictures/wallpapers/wallhaven-8586my_1920x1080.png
@@ -211,3 +211,8 @@ exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080
 #Settings to start xmodmap in order to rebind Caps Lock to Left Ctrl and rebind fn+CapsLock to CapsLock
 # exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xset r rate 200 30
+#Setting to set the screen turn of after 25 minutes
+exec --no-startup-id xset dpms 1500 1500 1500
+exec --no-startup-id pulseaudio --start
+
+default_border pixel 0
