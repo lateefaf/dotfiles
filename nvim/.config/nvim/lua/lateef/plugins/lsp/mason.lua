@@ -40,6 +40,7 @@ return {
 				"marksman",
 				"kotlin_language_server",
 			},
+			automatic_enabled = false,
 		})
 
 		mason_tool_installer.setup({
